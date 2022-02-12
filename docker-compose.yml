@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  db:
+    build: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mdpconsulting
+    restart: always
+  web:
+    build: ./web
+    environment:
+      MYSQL_DATABASE: mdpconsulting
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_HOST: db
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    restart: on-failure
