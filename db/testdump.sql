@@ -11,8 +11,8 @@ CREATE TABLE clientes (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES clientes WRITE;
-INSERT INTO clientes VALUES (1,"Albert","Tyson","1902-02-09");
+INSERT INTO clientes VALUES (1,'Albert','Tyson','1902-02-09');
 UNLOCK TABLES;
 
-ALTER USER "root" IDENTIFIED WITH mysql_native_password BY "password";
+ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'password';
 flush privileges;
